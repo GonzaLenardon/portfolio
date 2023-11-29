@@ -1,2 +1,2 @@
 # portfolio
-My porfolio
+My portfolio developed with html and css
