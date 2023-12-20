@@ -154,7 +154,7 @@ body {
   background-color: #262323;
   z-index: 1;
   filter: blur(70px);
-  animation: circulo1 100s linear infinite both;
+  animation: circulo1 90s linear infinite both;
 }
 
 .circulos .circulo {
@@ -162,7 +162,7 @@ body {
   width: 50%;
   height: 50%;
   transform: scale(5);
-  animation: circulo1 20s linear infinite both;
+  animation: circulo1 100s linear infinite both;
 }
 
 .circulos .circulo1 {
@@ -346,18 +346,66 @@ body {
   margin-bottom: 1rem;
 }
 
-.skill .ul {
+.seccion .stack {
+  width: 25%;
+  margin: 1em;
+}
+
+.front {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.logo1,
+.logo2 {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #4f00db;
+}
+
+.stack .svg {
+  width: 6em;
+  height: 6em;
+}
+
+.contenedor-Tech {
+  display: flex;
+  justify-content: center;
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.tech .img {
+  width: auto;
+  min-height: 2em;
+  margin: 0.4em;
+  border-radius: 2em;
+  box-shadow: #dad9d9 2px 2px;
+}
+
+/* .skill .ul {
   width: 60%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-
   border: #030000 2px solid;
   min-height: 15em;
 }
 
 .skill .ul .li {
   text-align: left;
-}
+} */
 
 .about {
 }
@@ -399,3 +447,16 @@ body {
 
 /* Imagen de <a href="https://www.freepik.es/foto-gratis/vista-frontal-hombre-comiendo-pizza-gigante_36029381.htm#&position=6&from_view=collections&uuid=22ecbb0e-b50f-4f53-a623-1323a47dc863">Freepik</a>
  */
+
+@media (max-width: 768px) {
+  .seccion .stack {
+    width: 45%;
+    margin: 1em;
+  }
+
+  .tech .img {
+    width: 100%;
+    height: auto;
+    margin: 0.4em;
+  }
+}
