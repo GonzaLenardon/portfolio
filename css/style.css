@@ -601,6 +601,7 @@ body {
 }
 
 .footer {
+  width: 40%;
   min-height: 10em;
   text-align: center;
   padding: 2em 0;
@@ -611,7 +612,7 @@ body {
 .footer .ul {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin-top: 3em;
   font-size: 1.3em;
@@ -682,6 +683,10 @@ body {
 
   .titulo {
     font-size: 1.8em;
+  }
+
+  .footer {
+    width: 70%;
   }
 
   .proyecto .imagen {
