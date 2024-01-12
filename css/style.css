@@ -6,7 +6,6 @@
   --gris: #303030;
   --gris-f: #757575;
   --negro: black;
-
   --tipo-principal: "Netflix Sans Regular";
 }
 
@@ -18,12 +17,23 @@
   vertical-align: baseline;
 }
 
-img {
-  max-width: 100%;
-  width: 100%;
-  display: flex;
-  object-fit: cover;
-  object-position: center center;
+@font-face {
+  font-family: Lobster-Regular;
+  src: url("Lobster-Regular.ttf");
+}
+
+@font-face {
+  font-family: EBG;
+  src: url("EBGaramond-BoldItalic.ttf");
+}
+
+.titulo {
+  font-family: EBG;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  opacity: 0.6;
 }
 
 a {
@@ -95,11 +105,35 @@ body {
   position: fixed;
   width: 5em;
   height: 5em;
-  background-color: white;
+  background-color: rgb(247, 243, 239);
   border-radius: 50%;
   z-index: 9;
   pointer-events: none;
   mix-blend-mode: difference;
+}
+
+.btnup {
+  position: fixed;
+  bottom: 1%;
+  right: 2%;
+  mix-blend-mode: difference;
+  opacity: 1;
+  transition: all ease 1.5s;
+  z-index: 999;
+}
+
+.btnup svg {
+  width: 3em;
+  height: 3em;
+}
+
+.btnup-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btnup svg:hover {
+  cursor: pointer;
 }
 
 .redsocial {
@@ -116,7 +150,7 @@ body {
   padding: 1rem 2em;
   /* z-index: 2;
   position: relative; */
-  display: none;
+  /*   display: none; */
 }
 
 .header .h1 {
@@ -154,7 +188,7 @@ body {
   background-color: #262323;
   z-index: 1;
   filter: blur(70px);
-  animation: circulo1 100s linear infinite both;
+  animation: circulo1 15s linear infinite both;
 }
 
 .circulos .circulo {
@@ -162,7 +196,8 @@ body {
   width: 50%;
   height: 50%;
   transform: scale(5);
-  animation: circulo1 20s linear infinite both;
+  animation: circulo1 50s linear infinite both;
+  /* animation: circulo1 100s linear infinite both; */
 }
 
 .circulos .circulo1 {
@@ -203,11 +238,15 @@ body {
   text-align: center;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .seccion {
   width: 95%;
-  min-height: 80vh;
+  min-height: 95vh;
   margin: 1em;
   display: flex;
   flex-flow: column wrap;
@@ -244,7 +283,7 @@ body {
   }
 }
 
-.seccion .info .ul .a {
+/* .seccion .info .ul .a {
   font-size: 1.2em;
   border: 2px solid rgba(251, 251, 251, 0.1);
   border-radius: 50%;
@@ -253,8 +292,33 @@ body {
   font-weight: 600;
   transition: all 0.5s ease;
   animation: aparecer 3s ease 3s both;
+} */
+
+.seccion .info .ul .a {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1em;
+  width: 12em;
+  border: 2px solid rgba(251, 251, 251, 0.1);
+  background-color: rgb(255, 254, 254, 0.1);
+
+  border-radius: 10px;
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.5s ease;
+  animation: aparecer 3s ease 3s both;
 }
 
+.li img {
+  height: 1.5em;
+}
+
+.li .a .svg {
+  width: 1.5em;
+  height: 1.5em;
+}
 .seccion .info .ul > :nth-child(2) .a {
   animation-delay: 5s;
 }
@@ -269,11 +333,19 @@ body {
 .seccion .circulos {
 }
 
+.seccion .name {
+  font-family: EBG;
+  font-size: 8em;
+  opacity: 0.8;
+}
+
 .seccion .h2 {
   font-family: var(--tipo-principal);
   font-weight: 600;
-  font-size: 5em;
+  font-size: 6em;
+  font-style: italic;
   color: rgb(255, 255, 255, 0.7);
+  margin: 1em;
   mix-blend-mode: multiply;
 }
 
@@ -289,10 +361,103 @@ body {
   width: 90%;
   max-width: 50rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 3fr));
   justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
+}
+
+.proyecto {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 3em;
+  padding-bottom: 2em;
+}
+
+.proyecto:hover {
+  animation: bigproyect 2s ease both;
+}
+
+.badge {
+  background-color: #198754;
+  padding: 0.3em 0.8em;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.b1 {
+  background-color: #dc3545;
+}
+
+.b2 {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.b3 {
+  background-color: #198754;
+}
+
+.b4 {
+  background-color: #0d6efd;
+}
+
+@keyframes bigproyect {
+  from {
+    /*   opacity: 0;
+    transform: translateY(50%);
+    */
+    transform: scale(1);
+  }
+
+  to {
+    /* opacity: 1;
+    transform: translate(0%); */
+    transform: scale(1.1);
+  }
+}
+
+.proyecto:hover .detalle .link {
+  grid-template-rows: 1fr;
+}
+.proyecto .imagen {
+  min-width: 50%;
+  /*  height: 520px;
+ */
+  display: flex;
+  background-color: #d11f00;
+}
+
+.proyecto .imagen .img {
+  width: 100%;
+}
+
+.proyecto .detalle {
+  min-width: 50%;
+  padding: 1em;
+  /* font-size: 1.5em;
+ */
+  font-size: clamp(1em, 4vw, 1.2em);
+  line-height: 1.8em;
+}
+
+.proyecto .link {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 3s grid-template-rows ease;
+}
+
+.proyecto .link > ul {
+  overflow: hidden;
+}
+
+.proyecto .link svg {
+  width: 3em;
+  height: 3em;
 }
 
 .seccion .article {
@@ -306,16 +471,13 @@ body {
   overflow: hidden;
 }
 
-.seccion .a {
-}
-
-.seccion .img {
+.article .img {
   width: 100%;
   background-color: aqua;
   background-size: contain;
 }
 
-.seccion .h4 {
+.article .h4 {
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0, 0.5);
@@ -327,12 +489,10 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-
   color: white;
   font-size: 1.8em;
   font-style: italic;
   transform: scale(1.4);
-
   opacity: 0;
   transition: all 0.5s ease;
 }
@@ -342,24 +502,77 @@ body {
   transform: scale(1);
 }
 
-.works .h2 {
-  margin-bottom: 1rem;
+.seccion .stack {
+  width: 30%;
+  margin: 1em;
 }
 
-.skill .ul {
-  width: 60%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+.front {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+/* 
+.logo1,
+.logo2 {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #4f00db;
+} */
 
-  border: #030000 2px solid;
-  min-height: 15em;
+.stack .svg {
+  width: 5em;
+  height: 5em;
 }
 
-.skill .ul .li {
-  text-align: left;
+.contenedor-Tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.about {
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2em;
+}
+
+.tech .img {
+  width: auto;
+  height: 5em;
+  margin: 1em;
+  /*  box-shadow: #dad9d9 2px 2px; */
+}
+
+.tech .svg {
+  width: auto;
+  height: 5em;
+  margin: 0.5em;
+}
+
+.tech .tool {
+  height: 4em;
+  width: auto;
+  border-radius: 5px;
+  margin: 1em;
+}
+
+.tech .label {
+  height: 2em;
+  width: auto;
+  margin: 1em;
+}
+
+.seccion .about {
 }
 
 .about .h2 {
@@ -369,8 +582,8 @@ body {
 .about .p {
   max-width: 60rem;
   text-align: left;
-  margin: 0 0 2rem;
-  font-size: 1.5em;
+  margin: 0.5em 0.5em 2rem;
+  font-size: clamp(1.1em, 5vw, 2em);
 }
 
 .about .rrss {
@@ -388,14 +601,120 @@ body {
 }
 
 .footer {
+  min-height: 10em;
   text-align: center;
   padding: 2em 0;
-  background-color: #d11f00;
-  color: white;
+  font-size: 1em;
+  opacity: 0.6;
+}
+
+.footer .ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3em;
+  font-size: 1.3em;
 }
 
 /* Imagen de <a href="https://www.freepik.es/foto-gratis/hamburguesa-ternera-lechuga-tomate_5546673.htm#from_view=detail_alsolike">Freepik</a>
- */
+*/
 
 /* Imagen de <a href="https://www.freepik.es/foto-gratis/vista-frontal-hombre-comiendo-pizza-gigante_36029381.htm#&position=6&from_view=collections&uuid=22ecbb0e-b50f-4f53-a623-1323a47dc863">Freepik</a>
- */
+*/
+
+@media screen and (max-width: 768px) {
+  .seccion {
+  }
+
+  .seccion .stack {
+    width: 40%;
+    margin: 0.5em;
+  }
+
+  .tech {
+    margin: 0;
+  }
+
+  .tech .img {
+    width: 2.5em;
+    height: auto;
+    margin: 0.2em;
+  }
+
+  .tech .svg {
+    height: 2.5em;
+    width: auto;
+    margin: 0.1em;
+  }
+
+  .tech .label {
+    height: 1.5em;
+    width: auto;
+    margin: 0.1em;
+  }
+
+  .stack.tools {
+    width: 80%;
+  }
+
+  .tech .tool {
+    height: auto;
+    width: 4em;
+    margin: 0.5em;
+  }
+
+  .seccion .name {
+    font-size: 2.8em !important;
+  }
+
+  .seccion .h2 {
+    font-size: 4em;
+    mix-blend-mode: multiply;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .seccion .h3 {
+    font-size: 2em;
+    font-style: italic;
+  }
+
+  .titulo {
+    font-size: 1.8em;
+  }
+
+  .proyecto .imagen {
+    /*  height: 235px; */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .proyecto {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 1em;
+  }
+
+  .seccion .name {
+    font-size: 5em;
+  }
+
+  .proyecto .detalle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .seccion .proyecto:nth-child(2n + 1) {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1500px) {
+  .proyecto {
+    width: 90%;
+  }
+
+  .seccion .name {
+    font-size: 6em;
+  }
+}
