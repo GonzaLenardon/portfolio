@@ -46,4 +46,5 @@ $btnup.addEventListener("click", (e) => {
 
 window.addEventListener("DOMContentLoaded", (e) => {
   window.scrollTo(0, 0);
+  console.log("Recarga");
 });
