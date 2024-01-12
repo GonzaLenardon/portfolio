@@ -2,6 +2,7 @@ console.log("portfolio");
 
 const d = document;
 const $cursor = d.getElementById("cursor");
+const $btnup = d.getElementById("btnup");
 
 const $ulredsocial = document.getElementById("redsocial");
 const $ulredsocialfooter = document.getElementById("redsocialfooter");
@@ -27,4 +28,18 @@ $ulredsocialfooter.addEventListener("mouseover", (e) => {
 
 $ulredsocialfooter.addEventListener("mouseout", (e) => {
   $cursor.classList.remove("redsocial");
+});
+
+window.addEventListener("scroll", () => {
+  const y = window.screenY || d.documentElement.scrollTop;
+
+  if (y > 200) {
+    $btnup.classList.remove("btnup-hidden");
+  } else {
+    $btnup.classList.add("btnup-hidden");
+  }
+});
+
+$btnup.addEventListener("click", (e) => {
+  window.scrollTo(0, 0);
 });
