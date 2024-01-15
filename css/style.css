@@ -115,7 +115,7 @@ body {
 .btnup {
   position: fixed;
   bottom: 1%;
-  right: 2%;
+  right: 5%;
   mix-blend-mode: difference;
   opacity: 1;
   transition: all ease 1.5s;
@@ -269,6 +269,9 @@ body {
 
 .seccion .info {
   animation: aparecer 2s ease 1s both;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 @keyframes aparecer {
@@ -299,10 +302,9 @@ body {
   justify-content: space-evenly;
   align-items: center;
   font-size: 1em;
-  width: 12em;
+  min-width: 12em;
   border: 2px solid rgba(251, 251, 251, 0.1);
   background-color: rgb(255, 254, 254, 0.1);
-
   border-radius: 10px;
   padding: 0.5em;
   text-transform: uppercase;
@@ -583,7 +585,7 @@ body {
   max-width: 60rem;
   text-align: left;
   margin: 0.5em 0.5em 2rem;
-  font-size: clamp(1.1em, 5vw, 2em);
+  font-size: clamp(1.1em, 5vw, 1.5em);
 }
 
 .about .rrss {
@@ -625,9 +627,6 @@ body {
 */
 
 @media screen and (max-width: 768px) {
-  .seccion {
-  }
-
   .seccion .stack {
     width: 40%;
     margin: 0.5em;
@@ -660,8 +659,8 @@ body {
   }
 
   .tech .tool {
+    width: 3em;
     height: auto;
-    width: 4em;
     margin: 0.5em;
   }
 
@@ -672,13 +671,16 @@ body {
   .seccion .h2 {
     font-size: 4em;
     mix-blend-mode: multiply;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
   }
 
   .seccion .h3 {
     font-size: 2em;
     font-style: italic;
+  }
+
+  .seccion .info .ul .a {
+    font-size: 0.7em;
   }
 
   .titulo {
@@ -693,8 +695,13 @@ body {
     display: none;
   }
 
-  .proyecto .imagen {
-    /*  height: 235px; */
+  .btnup {
+    right: 5%;
+  }
+
+  .btnup svg {
+    width: 1.5em;
+    height: 1.5em;
   }
 }
 

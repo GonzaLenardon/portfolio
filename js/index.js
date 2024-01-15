@@ -44,6 +44,6 @@ $btnup.addEventListener("click", (e) => {
   window.scrollTo(0, 0);
 });
 
-window.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener("DOMContentLoaded", (e) => {
   window.scrollTo(0, 0);
 });
