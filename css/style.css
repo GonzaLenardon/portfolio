@@ -6,7 +6,7 @@
   --gris: #303030;
   --gris-f: #757575;
   --negro: black;
-  --tipo-principal: "Netflix Sans Regular";
+  --tipo-principal: 'Netflix Sans Regular';
 }
 
 * {
@@ -19,12 +19,12 @@
 
 @font-face {
   font-family: Lobster-Regular;
-  src: url("Lobster-Regular.ttf");
+  src: url('Lobster-Regular.ttf');
 }
 
 @font-face {
   font-family: EBG;
-  src: url("EBGaramond-BoldItalic.ttf");
+  src: url('EBGaramond-BoldItalic.ttf');
 }
 
 .titulo {
@@ -354,9 +354,6 @@ body {
   font-style: italic;
 }
 
-.seccion .p {
-}
-
 .seccion .grid {
   width: 90%;
   max-width: 50rem;
@@ -586,6 +583,13 @@ body {
   font-size: clamp(1.1em, 5vw, 2em);
 }
 
+.trabajo .pp2 {
+  max-width: 60rem;
+  text-align: left;
+  margin: 0.5em 0.5em 2rem;
+  font-size: clamp(0.8em, 3vw, 1.5em);
+}
+
 .about .rrss {
 }
 
@@ -615,6 +619,32 @@ body {
   align-items: center;
   margin-top: 3em;
   font-size: 1.3em;
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* Centra la lista */
+}
+
+.ul {
+  display: flex;
+  width: 100%;
+  min-width: 800px; /* Ajusta el ancho máximo */
+  justify-content: space-between; /* Distribuye los elementos */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.li {
+  /*   padding: 10px;
+ */
+}
+
+.a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 /* Imagen de <a href="https://www.freepik.es/foto-gratis/hamburguesa-ternera-lechuga-tomate_5546673.htm#from_view=detail_alsolike">Freepik</a>
@@ -717,4 +747,97 @@ body {
   .seccion .name {
     font-size: 6em;
   }
+}
+
+/* seccion Experiencia */
+/* 🔥 Estilo general de la sección */
+.experiencia {
+  margin: 3em auto;
+  padding: 3em;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+/* 🌟 Título "Experiencia" con efecto degradado */
+.experiencia .h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+/* 🔹 Línea decorativa debajo del título */
+.experiencia .h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff4b2b;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* 🎭 Tarjeta del trabajo con efecto "Glassmorphism" */
+.trabajo {
+  padding: 2em;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.trabajo:hover {
+  transform: translateY(-5px);
+}
+
+/* 📅 Fecha con icono */
+.trabajo .fecha {
+  font-size: 1.1em;
+  color: white;
+  /*  font-weight: bold; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 🔥 Estilo de la lista de habilidades */
+.trabajo ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5em;
+}
+
+/* 🎯 Elementos de la lista con hover */
+.trabajo ul li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.trabajo ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* 🎨 Íconos dentro de la lista */
+.trabajo ul li i {
+  font-size: 1.2em;
+  color: #ff4b2b;
 }
