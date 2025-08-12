@@ -271,6 +271,21 @@ body {
   animation: aparecer 2s ease 1s both;
 }
 
+.logros {
+  font-family: var(--tipo-principal);
+  font-size: 2em;
+  text-align: start;
+  margin: 0.5em;
+  padding-left: 1em;
+  color: rgb(255, 255, 255, 0.6);
+  font-weight: bold;
+  font-style: italic;
+  /*   mix-blend-mode: multiply; */
+}
+
+.detalleLogros {
+}
+
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -788,8 +803,9 @@ body {
 /* 🎭 Tarjeta del trabajo con efecto "Glassmorphism" */
 .trabajo {
   padding: 2em;
+  margin: 2em 0;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(3, 3, 3, 0.6);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(12px);
   transition: transform 0.3s ease-in-out;
@@ -829,6 +845,7 @@ body {
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease-in-out;
+  text-align: start;
 }
 
 .trabajo ul li:hover {
@@ -840,4 +857,23 @@ body {
 .trabajo ul li i {
   font-size: 1.2em;
   color: #ff4b2b;
+}
+
+.trabajo ul.ullogros {
+  margin: 0;
+  padding-bottom: 0;
+  margin-bottom: 1em;
+}
+
+.ullogros .lilogro {
+  background: rgba(0, 0, 0, 0);
+  padding: 10px 80px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  text-align: start;
 }
