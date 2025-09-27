@@ -277,7 +277,7 @@ body {
 
 .card-proyectos {
   display: flex;
-  max-width: 40%;
+  width: 45%;
   background: linear-gradient(145deg, #0f172a, #1e293b);
   border-radius: 18px;
   margin: 1em;
